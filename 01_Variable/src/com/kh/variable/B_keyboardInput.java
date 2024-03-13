@@ -56,14 +56,14 @@ public class B_keyboardInput {
 	}
 	
 	// 키보드로 값을 입력 받을 때 종종 발생되는 문제 
-	public void inputTeset3() {
+	public void inputTest3() {
 		// 스캐너 생성
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("이름");
+		System.out.print("이름 : ");
 		String name = sc.nextLine();
 		
-		System.out.print("나이");
+		System.out.print("나이 : ");
 		int age = sc.nextInt();
 		
 		// 버퍼에 남아있는 엔터 (\n)을 비워주지 못해서 오류 발생!! 
@@ -76,6 +76,69 @@ public class B_keyboardInput {
 		double height = sc.nextDouble();
 		
 		//xxx 님은 xx 살이며, 사는곳은 xxx 이고, 키는 xxx.xcm입니다.
-		System.out.printf("%s님은 %d살이며, 사는곳은 %s이고, 키는 %1fcm 입니다.", name,age,address,height);
+		System.out.printf("%s님은 %d살이며, 사는곳은 %s이고, 키는 %.1fcm 입니다.", name,age,address,height);
+	}
+	
+	public void inputTest4() {
+		Scanner sc = new Scanner(System.in);
+		
+		// 문자열을 입력 받을 때 => sc.nextLine();
+		// 문자만 입력 받을 때 => sc.next();
+		// 정수값을 입력 받을 때 => sc.nextInt();
+		// 실수값을 입력 받을 때 => sc.nextDouble();
+		
+		System.out.print("이름 : ");
+		String name = sc.nextLine();
+		
+		System.out.print("성별(M/F) : ");
+		// char gender = sc.nextChar(); nextChar()와 같은 메소드는 존재하지 않는다.!!
+		char gender = sc.nextLine().charAt(0);
+		// ** 인덱스 : 순번 같은 존재, 단, 0부터 시작함 !! 
+		
+		System.out.print("나이 : ");
+		int age = sc.nextInt();
+		
+		System.out.print("키 : ");
+		double height = sc.nextDouble();
+		
+		/*
+		 * xxx님의 개인정보 
+		 * 성별 : x
+		 * 나이 : xx
+		 * 키 : xxx.x
+		 */
+		
+		System.out.println(name + "님의 개인정보");
+		System.out.println("성별 : " + gender);
+		System.out.println("나이 : " + age );
+		System.out.println("키 : " + height);
+	}
+
+	public void charAtTest() {
+		String str = "Hello";
+		
+		// 변수에 기록하여 출력하는 방식
+		char ch = str.charAt(4);
+		System.out.println(ch);
+		
+		// 바로 출력하는 방식
+		System.out.println(str.charAt(1));
+		
+		// 존재하지 않는 인덱스 : 오류발생 !!!
+		// System.out.println(str.charAt(12));
+		// StringIndexOutBoundsException 발생 
+		
+		/*
+		 * ** 정리 **
+		 * 1. 콘솔창 (모니터)에 출력하기 위해 : System.out.print[ln] () 메소드를 이용 
+		 * 2. 콘솔창(키보드)에 입력하기 위해 : Scanner 이용해서 (nextLine(), next(), nextInt(), nextDouble(),..)
+		 * 
+		 * 		> 주의사항
+		 * 		1) sc.nextXXX() 메소드 뒤에 sc.nextLine() 메소드가 와야 될 경우
+		 * 			sc.nextLine() 메소드를 한번 더 써줘서 버퍼에 남아있는 "엔터"를 빼주는 과정이 필수 !! 
+		 * 		2) "문자" 값을 입력받아야 될 경우 
+		 * 			sc.nextLine() 메소드를 통해 우선 문자열로 입력 받고 
+		 * 			그 뒤에 .charAt(인덱스값)메소드를 통해서 문자 하나 추출
+		 */
 	}
 }
