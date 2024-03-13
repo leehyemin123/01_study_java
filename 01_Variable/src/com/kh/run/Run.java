@@ -12,7 +12,7 @@ public class Run {
 		
 		B_keyboardInput b = new B_keyboardInput();
 		//b.inputTest1();
-
+		b.inputTest2();
 	}
 
 }

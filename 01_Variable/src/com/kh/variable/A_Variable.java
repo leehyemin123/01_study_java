@@ -164,7 +164,6 @@ public class A_Variable {
 		String 이름;
 		int 나이;
 		int  userAge;
-
 	}
 	
 	/*

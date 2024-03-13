@@ -68,5 +68,14 @@ public class B_keyboardInput {
 		
 		// 버퍼에 남아있는 엔터 (\n)을 비워주지 못해서 오류 발생!! 
 		sc.nextLine();
+		
+		System.out.print("주소 : ");
+		String address = sc.nextLine();
+		
+		System.out.print("키 : ");
+		double height = sc.nextDouble();
+		
+		//xxx 님은 xx 살이며, 사는곳은 xxx 이고, 키는 xxx.xcm입니다.
+		System.out.printf("%s님은 %d살이며, 사는곳은 %s이고, 키는 %1fcm 입니다.", name,age,address,height);
 	}
 }
