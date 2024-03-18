@@ -24,7 +24,7 @@ public class A_If {
 	public void method1() {
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("저우 하나 입력 : ");
+		System.out.print("정수 하나 입력 : ");
 		int num = sc.nextInt();
 		
 		/*
@@ -51,6 +51,14 @@ public class A_If {
 			System.out.println("양수가 아니다.");
 			
 		}
+	}
+		
+		public void method2() {
+			
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("정수 하나 입력 : ");
+		int num = sc.nextInt();
 		
 		/*
 		 * if - else문
@@ -155,7 +163,63 @@ public class A_If {
 		System.out.println(name + "님은" + result + "입니다.");
 	}
 	
-}
+	/*				1		1		2	 4	   8     4      8      2
+	 * 기본자료형 : boolean , byte, short, int, long, float, double, char
+	 * 참조자료형 : String // 클래스는 대문자로 시작 
+	 * 
+	 * 기본자료형들 끼리 등등 비교시에는 ==, =! 사용이 가능! (정상적 비교됨)
+	 * 단, 참조자료형은 동등비교시 ==, =! 사용시 정상적으로 비교가 안됨.
+	 * 			=> equals() 메소드를 이용해서 비교 해야됨. (String 클래스에서 제공)
+	 * 				문자열.equals(문자열);
+	 */
+	
+	
+	// 특이케이스
+	public void method6() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("이름입력 : ");
+		String name = sc.nextLine();
+		if(name.equals("차은우")) {
+			System.out.println("차은우님 반갑습니다.");
+			
+		}else {
+			System.out.println("차은우님이 아니신가보네요.. ㅠㅠ 안녕히가세요.");
+		}
+		
+	}
+	
+	// 조건문 중첩 사용 
+	public void method7() {
+		Scanner sc = new Scanner(System.in); // 입력 받기 
+		
+		System.out.print("정수 입력(양수만) : ");
+		int num = sc.nextInt(); // 숫자니까 int 
+		
+		if(num > 0) { // 양수일 경우
+			
+			if(num%2 ==0) { // (양수이고) 짝수일 경우 
+				System.out.println("짝수입니다.");
+			}else {//(양수이고) 홀수인경우
+				System.out.print("홀수입니다.");
+			}
+			
+			}else { //양수가 아닐경우
+				System.out.print("양수가 아닙니다. 잘못입력하셨습니다.");
+			}
+		}
+		
+	
+	
+	
+	
+	
+	
+	}
+	
+	
+	
+
 
 
 
