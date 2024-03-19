@@ -27,4 +27,46 @@ public class B_Continue {
 			System.out.print(i + " ");
 		}
 	}
+	
+	public void method2() {
+		// 1부터 100 까지의 총 합계 
+		// 단 , 6의 배수값은 빼고 덧셈연산 하겠다.
+		
+		// 1. 1부터 100 까지의 총합계 
+		
+		// 1. sum 변수 만들기 
+		int sum = 0;
+		
+		// 2. 누적합 공식 이용해서 반복문 돌리기 => sum += i;
+		for(int i=1; i<=100; i++) {
+			
+			if(i % 6 == 0) {
+				continue; // 6의 배수일때는 건너뛰기 
+			}
+			sum += i; // 누적합 공식
+		}
+		
+		System.out.println("1부터 100까지의 총합계 : " + sum);
+	}
+	
+	public void method3() {
+		// 2~9단까지 출력(이중for문)
+		// 단, 3의 배수단은 빼고 출력
+		
+		// === 2단 ===
+		
+		// 2 x 1 = 2
+		
+		for(int dan=2; dan<=9; dan++) {
+			if(dan % 3 == 0 ) {
+				continue;
+			}
+			
+			System.out.println(" === " + dan + "단===");
+			
+			for(int i=1; i<=9; i++) {
+				System.out.printf(" %d x %d = %d\n", dan, i, dan*i);
+			}
+		}
+	}
 }
