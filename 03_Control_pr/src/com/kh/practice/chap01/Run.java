@@ -6,7 +6,8 @@ public class Run {
 		// TODO Auto-generated method stub
 
 		ContrlPractice a = new ContrlPractice();
-		a.practice8();
+		//a.practice8();
+		a.practice9();
 	}
 
 }

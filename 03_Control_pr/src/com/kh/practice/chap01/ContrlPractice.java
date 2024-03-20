@@ -197,9 +197,70 @@ public class ContrlPractice {
 			}
 		}
 		
+	}
+	
+	public void practice9() {
+		/*
+		 * 중간고사, 기말고사, 과제점수, 출석회수를 입력하고 pass 또는 fail을 출력하세요.
+		 * 평가 비율은 중간고사 20% 기말고사 30%, 과제 30% ,출석 20%로 이루어져 있고 
+		 * 이때 , 출석 비율은 출석 회수의 총 강의 회수 20 회 중에서 출석한 날만 따진 값으로 계산하세요.
+		 * 70점 이상일 경우 pass, 70점 미만이거나 전체 강의에서 30% 이상 결석시 fail을 출석하세요.
+		 */
 		
-				
+		Scanner sc = new Scanner(System.in);
 		
+		System.out.println("중간고사 점수 : ");
+		double mScore = sc.nextDouble();
+		
+		System.out.println("기말고사 점수 : ");
+		double fScore= sc.nextDouble();
+		
+		System.out.println("과제 점수 : ");
+		double hScore = sc.nextDouble();
+		
+		System.out.println("출석 점수 : ");
+		double aScore = sc.nextDouble();
+		
+		if(aScore < 14) { // 20회중 최소 14회 출석해야 결석률이 30% 미만이 됨 
+			System.out.println("===========결과============");
+			System.out.println("Fail [출석 회수 부족(" +(int)aScore + "/ 20)]");
+		}else { 
+			System.out.println("===========결과==========");
+			System.out.println("중간고사 점수(20) : " + (mScore = mScore *0.2));
+			System.out.println("기말고사 점수(30) : " + (fScore = fScore *0.3));
+			System.out.println("과제 점수(30) : " + (hScore = hScore * 0.3));
+			System.out.println("출석 점수(20) : " + aScore);
+			
+			double sumScore = mScore + fScore + hScore + aScore;
+			
+			System.out.println("총점 : 61.0");
+			
+			if(sumScore >= 70) {
+				System.out.println("PASS");
+			}if(sumScore < 70) {
+				System.out.println("Fail [점수미달]");
+			}
+		}
+	}
+	
+	public void practice10() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("실행할 기능을 선택하세요.\n1.메뉴 출력 \n2.짝수/홀수 \n3. 합격/불합격 "
+	              + "\n4. 계절 \n5. 로그인 \n6. 권한 확인 \n7. BMI \n8. 게산기 \n9. P/F \n선택 : ");
+		
+		int func = sc.nextInt();
+		
+		switch(func) {
+		case 4:
+			practice4();
+			break;
+		}
+		
+		sc.close();
 		
 	}
+	
+	
 }
