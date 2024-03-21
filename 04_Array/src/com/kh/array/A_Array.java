@@ -303,5 +303,61 @@ public class A_Array {
 			
 			System.out.print("배열의 길이 : ");
 			int size = sc.nextInt();
+			
+			// 2. 그 크기 만큼의 정수 배열 생성
+			int[] arr = new int[size];
+			
+			// 3. 반복문을 활용해서 0번~ 마지막 인덱스까지 매번 1~100 사이의 랜덤값을 발생시켜서 대입
+			for(int i=0; i<arr.length; i++) {
+				arr[i] = (int)(Math.random()*100+1);
+			}
+			
+			// 4. 반복문을 활용해서 0번 ~ 마지막 인덱스까지 담긴 값을 출력과 동시에 
+			// 해당 그 인덱스에 담김 값이 짝수인 값들의 총합을 구하자 => 누적합
+			
+			// 1. sum 변수 만들기
+			int sum = 0; // for문 밖에 만들어야 함 
+			for(int i=0; i<arr.length; i++) {
+				System.out.println("arr[" +i + "] : " + arr[i]);
+				
+				// 2. 반복문 돌려가며 누적합 공식 사용하기 => sum += i
+				if(arr[i]%2 == 0) {
+					sum += arr[i];
+				}
+			}
+			
+			System.out.println("해당 배열의 짝수의 총합 : " + sum);
+		}
+		
+		public void method12() {
+			// 변수만을 가지고 프로그래밍 했을 경우
+			// 생일자 5명의 나이를 보관한다 => 변수
+			
+			int age1 = 15;
+			int age2 = 23;
+			int age3 = 50;
+			int age4 = 34;
+			int age5 = 25;
+			
+			// 배열 가지고 프로그래밍
+			int[] ages = new int[5];
+			
+			ages[0] = 15;
+			ages[1] = 23;
+			ages[2] = 50;
+			ages[3] = 34;
+			ages[4] = 25;
+			
+			// 1. sum 변수 만들기
+			int sum = 0;
+			
+			// 2. 누적합 공식 활용해서 반복문 돌리기 => sum =+ i ;
+			for(int i=0; i<ages.length; i++) {
+				sum += ages[i];
+			}
+			for(int i=0; i<ages.length;i++) {
+				System.out.println("ages[" + i + "] : " + ages[i]);
+			}
+			System.out.println("나이의 총합 : " + sum);
 		}
 }
